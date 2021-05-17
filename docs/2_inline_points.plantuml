@@ -1,0 +1,34 @@
+
+@startuml
+
+left to right direction
+
+map line0 {
+  from.x => 12
+  from.y => 34
+  to.x => 43
+  to.y => 65
+}
+
+map line1 {
+  from.x => 43
+  from.y => 78
+  to.x => 23
+  to.y => 34
+}
+
+map line2 {
+  from.x => 54
+  from.y => 65
+  to.x => 67
+  to.y => 98
+}
+
+map "new Lines[]" as Lines {
+ 0 *--> line0
+ 1 *---> line1
+ 2 *----> line2
+}
+
+@enduml
+

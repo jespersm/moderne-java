@@ -4,7 +4,7 @@ import static java.lang.Math.sqrt;
 import static java.util.Objects.requireNonNull;
 
 // Java 16
-public record Line(Point from, Point to) implements Shape {
+public primitive record Line(Point from, Point to) implements Shape {
 
     public Line {
         requireNonNull(from);

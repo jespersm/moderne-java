@@ -7,6 +7,11 @@ import org.openjdk.jmh.annotations.Benchmark;
 import dk.nine.academy.modernejava.Line;
 import dk.nine.academy.modernejava.Point;
 
+/**
+ * Kør den med:
+ *  
+ * <code>mvn clean package && java -jar target/benchmarks.jar -wi 1 -i 1 -f 1</code>
+ */
 public class LineBenchmark {
 
 	final static int NUM_LINES = 1000000;

@@ -1,0 +1,20 @@
+
+@startuml
+
+map "new Lines[]" as Lines {
+  line0.from.x => 12
+  line0.from.y => 34
+  line0.to.x => 43
+  line0.to.y => 65
+  line1.from.x => 43
+  line1.from.y => 78
+  line1.to.x => 23
+  line1.to.y => 34
+  line2.from.x => 54
+  line2.from.y => 65
+  line2.to.x => 67
+  line2.to.y => 98
+}
+
+@enduml
+
