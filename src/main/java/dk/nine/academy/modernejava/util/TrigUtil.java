@@ -49,7 +49,11 @@ public class TrigUtil {
     }
 
     public static Optional<Shape> getBiggest(List<Shape> shapes) {
-        return shapes.stream().max(Comparator.comparingDouble((Shape s) -> s.getArea()));
+        // Java 11
+        return shapes.stream().max(Comparator.comparingDouble((var s) -> s.getArea()));
+
+        // Eller: Comparator.comparingDouble(s -> s.getArea())
+        // Eller: Comparator.comparingDouble(Shape::getArea)
     }
 
 }
