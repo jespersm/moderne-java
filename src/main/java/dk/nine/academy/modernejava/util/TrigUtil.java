@@ -14,23 +14,16 @@ import dk.nine.academy.modernejava.Shape;
 public class TrigUtil {
 
     public static double inkAmount(Shape s) {
-        double length;
-        switch (s.getKind()) {
-        case POINT:
-            length = 0.1;
-            break;
-        case SURFACE:
-            length = s.getArea() / 10 + s.getEdgeLength();
-            break;
-        case LINE:
-            length = max(0.1, s.getLength());
-            break;
-        default:
+        // Java 14
+        return switch (s.getKind()) {
+        case POINT -> 0.1;
+        case SURFACE -> s.getArea() / 10 + s.getEdgeLength();
+        case LINE -> max(0.1, s.getLength());
+        default -> {
             System.err.println("Hov, kender ikke linjelængden af en " + s);
-            length = 1; // bedste mands bedste bud
-            break;
+            yield 1; // bedste mands bedste bud
         }
-        return length;
+        };
     }
 
     public static boolean isSinglePoint(Shape s) {
