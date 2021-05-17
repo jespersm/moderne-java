@@ -30,9 +30,9 @@ public class TrigUtil {
         // Java 16
         if (s instanceof Point) {
             return true;
-        } else if (s instanceof Circle c && c.getRadius() == 0.0) {
+        } else if (s instanceof Circle c && c.radius() == 0.0) {
             return true;
-        } else if (s instanceof Line l && l.getFrom().equals(l.getTo())) {
+        } else if (s instanceof Line l && l.from().equals(l.to())) {
             return true;
         }
         return false;
