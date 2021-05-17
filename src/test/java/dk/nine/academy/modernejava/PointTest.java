@@ -9,7 +9,12 @@ public class PointTest {
     public void testPointAsJSON() throws Throwable {
         var p1 = new Point(0, 1);
 
-        assertEquals("{\n  \"x\" : 0,\n  \"y\" : 1\n}", p1.asJson());
+        // Java 15
+        assertEquals("""
+                 {
+                   "x" : 0,
+                   "y" : 1
+                 }""", p1.asJson());
     }
 
 }
