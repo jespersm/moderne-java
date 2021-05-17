@@ -48,14 +48,10 @@ public final class Circle implements Shape {
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-        if (!(obj instanceof Circle))
-            return false;
-        var other = (Circle) obj; // Java 10
-        if (!center.equals(other.center))
-            return false;
-        if (Math.abs(radius - other.radius) > 0.00001)
-            return false;
-        return true;
+        // Java 16
+        return obj instanceof Circle other
+                && center.equals(other.center)
+                && Math.abs(radius - other.radius) >= 0.00001;
     }
 
     @Override

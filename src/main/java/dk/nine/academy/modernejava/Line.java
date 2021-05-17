@@ -47,14 +47,10 @@ public class Line implements Shape {
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-        if (!(obj instanceof Line))
-            return false;
-        var other = (Line) obj; // Java 10
-        if (!from.equals(other.from))
-            return false;
-        if (!to.equals(other.to))
-            return false;
-        return true;
+        // Java 16
+        return obj instanceof Line other
+                && from.equals(other.from)
+                && to.equals(other.to);
     }
 
     @Override

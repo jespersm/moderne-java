@@ -43,13 +43,9 @@ public class Point implements Shape {
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-        if (!(obj instanceof Point))
-            return false;
-        var other = (Point) obj; // Java 10
-        if (x != other.x)
-            return false;
-        if (y != other.y)
-            return false;
-        return true;
+        // Java 16
+        return obj instanceof Point other
+                && x == other.x
+                && y == other.y;
     }
 }

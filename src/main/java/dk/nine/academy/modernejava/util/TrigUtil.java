@@ -27,16 +27,13 @@ public class TrigUtil {
     }
 
     public static boolean isSinglePoint(Shape s) {
+        // Java 16
         if (s instanceof Point) {
             return true;
-        } else if (s instanceof Circle) {
-            var c = (Circle) s; // Java 10
-            if (c.getRadius() == 0.0)
-                return true;
-        } else if (s instanceof Line) {
-            var l = (Line) s; // Java 10
-            if (l.getFrom().equals(l.getTo()))
-                return true;
+        } else if (s instanceof Circle c && c.getRadius() == 0.0) {
+            return true;
+        } else if (s instanceof Line l && l.getFrom().equals(l.getTo())) {
+            return true;
         }
         return false;
     }
