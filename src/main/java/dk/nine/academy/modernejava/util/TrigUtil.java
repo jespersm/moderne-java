@@ -37,11 +37,11 @@ public class TrigUtil {
         if (s instanceof Point) {
             return true;
         } else if (s instanceof Circle) {
-            Circle c = (Circle) s;
+            var c = (Circle) s; // Java 10
             if (c.getRadius() == 0.0)
                 return true;
         } else if (s instanceof Line) {
-            Line l = (Line) s;
+            var l = (Line) s; // Java 10
             if (l.getFrom().equals(l.getTo()))
                 return true;
         }

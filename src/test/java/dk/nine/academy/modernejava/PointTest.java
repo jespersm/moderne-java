@@ -7,7 +7,7 @@ public class PointTest {
 
     @Test
     public void testPointAsJSON() throws Throwable {
-        Point p1 = new Point(0, 1);
+        var p1 = new Point(0, 1);
 
         assertEquals("{\n  \"x\" : 0,\n  \"y\" : 1\n}", p1.asJson());
     }

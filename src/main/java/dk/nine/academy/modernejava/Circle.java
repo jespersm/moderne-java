@@ -37,8 +37,8 @@ public final class Circle implements Shape {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
+        var prime = 31; // Java 10
+        var result = 1; // Java 10
         result = prime * result + center.hashCode();
         result = prime * result + Double.hashCode(radius);
         return result;
@@ -50,7 +50,7 @@ public final class Circle implements Shape {
             return true;
         if (!(obj instanceof Circle))
             return false;
-        Circle other = (Circle) obj;
+        var other = (Circle) obj; // Java 10
         if (!center.equals(other.center))
             return false;
         if (Math.abs(radius - other.radius) > 0.00001)

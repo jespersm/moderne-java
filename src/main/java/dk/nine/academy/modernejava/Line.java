@@ -29,15 +29,15 @@ public class Line implements Shape {
 
     @Override
     public double getLength() {
-        int width = from.getX() - to.getX();
-        int height = from.getY() - to.getY();
+        var width = from.getX() - to.getX(); // Java 10
+        var height = from.getY() - to.getY(); // Java 10
         return sqrt(width * width + height * height);
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
+        var prime = 31; // Java 10
+        var result = 1; // Java 10
         result = prime * result + from.hashCode();
         result = prime * result + to.hashCode();
         return result;
@@ -49,7 +49,7 @@ public class Line implements Shape {
             return true;
         if (!(obj instanceof Line))
             return false;
-        Line other = (Line) obj;
+        var other = (Line) obj; // Java 10
         if (!from.equals(other.from))
             return false;
         if (!to.equals(other.to))

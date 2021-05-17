@@ -32,8 +32,8 @@ public class Point implements Shape {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
+        var prime = 31; // Java 10
+        var result = 1; // Java 10
         result = prime * result + x;
         result = prime * result + y;
         return result;
@@ -45,7 +45,7 @@ public class Point implements Shape {
             return true;
         if (!(obj instanceof Point))
             return false;
-        Point other = (Point) obj;
+        var other = (Point) obj; // Java 10
         if (x != other.x)
             return false;
         if (y != other.y)

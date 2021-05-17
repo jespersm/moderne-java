@@ -14,16 +14,16 @@ public class LineBenchmark {
 
 	@Benchmark
 	public double benchmark() {
-	    Random random = new Random(37);
+	    var random = new Random(37); // Java 10
 
-	    Line[] lines = new Line[NUM_LINES];
+	    var lines = new Line[NUM_LINES]; // Java 10
 		for (int i = 0; i < NUM_LINES; i++) {
 			lines[i] = new Line(
 					new Point(random.nextInt(10000), random.nextInt(10000)),
 					new Point(random.nextInt(10000), random.nextInt(10000)));
 		}
 
-		double sum = 0.0;
+		double sum = 0.0; // Men ikke her -- skal være effectively final
 		for (int n = 0; n < ITERATIONS; n++) {
 			sum = 0.0D;
 			for (int i = 0; i < NUM_LINES; i++) {
